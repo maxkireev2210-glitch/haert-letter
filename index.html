@@ -5,63 +5,101 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Для тебе ❤️</title>
+    <title>Heart Letter ❤️</title>
 
-    <!-- Підключаємо CSS -->
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-    <div class="container">
+    <main class="page">
 
-        <h1>Для тебе ❤️</h1>
-
-        <div class="envelope-container">
+        <div class="scene" id="scene">
 
             <!-- Сердечка -->
             <div class="hearts">
-                <span>❤️</span>
-                <span>💗</span>
-                <span>❤️</span>
-                <span>💕</span>
-                <span>❤️</span>
+                <span>♥</span>
+                <span>♥</span>
+                <span>♥</span>
+                <span>♥</span>
+                <span>♥</span>
             </div>
 
 
-            <!-- Лист -->
-            <div class="letter">
+            <!-- ЛИСТ -->
+            <div class="letter" id="letter">
 
-                <div class="letter-content">
+                <!-- Маленький лист у конверті -->
+                <div class="letter-preview">
+
+                    <div class="preview-heart">
+                        ♥
+                    </div>
+
+                    <p>Натисни на мене ❤️</p>
+
+                </div>
+
+
+                <!-- Повний текст листа -->
+                <div class="letter-full">
 
                     <h2>❤️ Для тебе ❤️</h2>
 
                     <p>
-                        Я хотів зробити для тебе щось прикольне.
-                    </p>
-
-                    <p>
                         Тому замість звичайного повідомлення
                         зробив цей маленький сайт :)
-                        Іруська сонечко моє 
-                        дякую тобі за те, що ти є в моєму житті ❤️
-                        дякую тобі за твою любов, підтримку та турботу ❤️
-                        да можливо я не завжди це показую, але я дуже ціную тебе ❤️
-                        можливо я не найкращий хлопець який завжди може зробити тобі подарунок
-                        але я обіцяю, що завжди буду поруч ❤️
-                        обіцяю старатись для того аби це стало реальністю
-                        обіцяю завжди бути чесним з тобою ❤️
-                        і завжди кохати тебе ❤️
-                        тому що ти моє маленьке сонечко ❤️
-                        ти моє золотце ❤️          
                     </p>
 
                     <p>
-                        Сподіваюся, тобі сподобається ❤️
+                        Іруська сонечко моє
                     </p>
 
-                    <div class="big-heart">
-                        ❤️
+                    <p>
+                        дякую тобі за те, що ти є в моєму житті ❤️
+                    </p>
+
+                    <p>
+                        дякую тобі за твою любов, підтримку та турботу ❤️
+                    </p>
+
+                    <p>
+                        да можливо я не завжди це показую,
+                        але я дуже ціную тебе ❤️
+                    </p>
+
+                    <p>
+                        можливо я не найкращий хлопець
+                        який завжди може зробити тобі подарунок
+                    </p>
+
+                    <p>
+                        але я обіцяю, що завжди буду поруч ❤️
+                    </p>
+
+                    <p>
+                        обіцяю старатись для того
+                        аби це стало реальністю
+                    </p>
+
+                    <p>
+                        обіцяю завжди бути чесним з тобою ❤️
+                    </p>
+
+                    <p>
+                        і завжди кохати тебе ❤️❤️❤️
+                    </p>
+
+                    <p>
+                        тому що ти моє маленьке сонечко ❤️
+                    </p>
+
+                    <p>
+                        ти моє золотце ❤️
+                    </p>
+
+                    <div class="final-heart">
+                        ♥
                     </div>
 
                 </div>
@@ -69,21 +107,27 @@
             </div>
 
 
-            <!-- Конверт -->
+            <!-- КОНВЕРТ -->
             <div class="envelope">
 
-                <div class="back"></div>
+                <div class="envelope-back"></div>
 
                 <div class="flap"></div>
 
-                <div class="front"></div>
+                <div class="envelope-left"></div>
+
+                <div class="envelope-right"></div>
+
+                <div class="envelope-bottom"></div>
+
+                <div class="seal">♥</div>
 
             </div>
 
         </div>
 
 
-        <!-- Кнопки -->
+        <!-- КНОПКИ -->
         <div class="buttons">
 
             <button id="openBtn">
@@ -96,10 +140,13 @@
 
         </div>
 
-    </div>
+    </main>
 
 
-    <!-- Підключаємо JavaScript -->
+    <!-- Затемнення при відкритті листа -->
+    <div class="overlay" id="overlay"></div>
+
+
     <script src="script.js"></script>
 
 </body>

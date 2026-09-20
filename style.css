@@ -1,74 +1,86 @@
-/* ===== ОСНОВНІ НАЛАШТУВАННЯ ===== */
-
 * {
     box-sizing: border-box;
 }
 
 body {
     margin: 0;
+
     min-height: 100vh;
 
     display: flex;
     justify-content: center;
     align-items: center;
 
-    background: #ffdce7;
-    font-family: Arial, sans-serif;
+    background: #f8d9e2;
+
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
 
     overflow: hidden;
 }
 
-.container {
+
+/* =====================
+   СТОРІНКА
+===================== */
+
+.page {
     text-align: center;
 }
 
-h1 {
-    color: #d94b70;
-    margin-bottom: 50px;
-}
 
+/* =====================
+   СЦЕНА
+===================== */
 
-/* ===== МІСЦЕ ДЛЯ КОНВЕРТА ===== */
-
-.envelope-container {
+.scene {
     position: relative;
 
-    width: 320px;
-    height: 230px;
-
-    margin: auto;
+    width: 300px;
+    height: 280px;
 }
 
 
-/* ===== КОНВЕРТ ===== */
+/* =====================
+   КОНВЕРТ
+===================== */
 
 .envelope {
     position: absolute;
 
-    width: 320px;
-    height: 200px;
+    width: 280px;
+    height: 180px;
 
+    left: 10px;
     bottom: 0;
+
+    filter:
+        drop-shadow(
+            0 10px 12px
+            rgba(160, 70, 95, 0.20)
+        );
 }
 
 
-/* Задня частина конверта */
+/* задня частина */
 
-.back {
+.envelope-back {
     position: absolute;
 
-    width: 100%;
-    height: 100%;
+    width: 280px;
+    height: 180px;
 
-    background: #f58aa5;
+    background: #f48ba6;
 
     border-radius: 5px;
 
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+    z-index: 1;
 }
 
 
-/* Верхня кришка конверта */
+/* верхній клапан */
 
 .flap {
     position: absolute;
@@ -76,21 +88,60 @@ h1 {
     width: 0;
     height: 0;
 
-    border-left: 160px solid transparent;
-    border-right: 160px solid transparent;
-    border-top: 110px solid #ff9bb4;
+    border-left: 140px solid transparent;
+    border-right: 140px solid transparent;
 
-    transform-origin: top;
+    border-top: 95px solid #f27394;
 
-    z-index: 4;
+    transform-origin: top center;
 
-    transition: transform 0.8s ease;
+    z-index: 6;
+
+    transition:
+        transform 0.8s ease,
+        z-index 0.2s;
 }
 
 
-/* Передня частина конверта */
+/* ліва частина */
 
-.front {
+.envelope-left {
+    position: absolute;
+
+    width: 0;
+    height: 0;
+
+    border-top: 90px solid transparent;
+    border-bottom: 90px solid transparent;
+
+    border-left: 140px solid #f78da7;
+
+    z-index: 4;
+}
+
+
+/* права частина */
+
+.envelope-right {
+    position: absolute;
+
+    right: 0;
+
+    width: 0;
+    height: 0;
+
+    border-top: 90px solid transparent;
+    border-bottom: 90px solid transparent;
+
+    border-right: 140px solid #f78da7;
+
+    z-index: 4;
+}
+
+
+/* нижня частина */
+
+.envelope-bottom {
     position: absolute;
 
     bottom: 0;
@@ -98,30 +149,51 @@ h1 {
     width: 0;
     height: 0;
 
-    border-left: 160px solid #f47f9d;
-    border-right: 160px solid #f47f9d;
+    border-left: 140px solid transparent;
+    border-right: 140px solid transparent;
 
-    border-top: 100px solid transparent;
-    border-bottom: 100px solid #ef718f;
+    border-bottom: 100px solid #ef7898;
 
-    z-index: 3;
+    z-index: 5;
 }
 
 
-/* ===== ЛИСТ ===== */
+/* сердечко на конверті */
+
+.seal {
+    position: absolute;
+
+    left: 50%;
+    top: 83px;
+
+    transform: translate(-50%, -50%);
+
+    color: #d60025;
+
+    font-size: 37px;
+
+    z-index: 7;
+
+    transition: opacity 0.3s;
+}
+
+
+/* =====================
+   ЛИСТ
+===================== */
 
 .letter {
     position: absolute;
 
-    width: 270px;
-    height: 190px;
+    width: 230px;
+    height: 145px;
 
-    left: 25px;
-    bottom: 10px;
+    left: 35px;
+    bottom: 18px;
 
-    background: white;
+    background: #ffeef3;
 
-    border-radius: 8px;
+    border-radius: 4px;
 
     z-index: 2;
 
@@ -129,223 +201,153 @@ h1 {
 
     cursor: pointer;
 
-    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
+    box-shadow:
+        0 5px 15px
+        rgba(130, 50, 75, 0.12);
 
     transition:
-        transform 1s ease,
-        height 1s ease,
-        width 0.7s ease,
-        left 0.7s ease,
-        top 0.7s ease;
+        transform 0.9s ease,
+        width 0.6s ease,
+        height 0.6s ease;
 }
 
 
-.letter-content {
-    padding: 20px;
+/* маленький лист */
+
+.letter-preview {
+    padding-top: 28px;
+
+    text-align: center;
+}
+
+.preview-heart {
+    color: #d60025;
+
+    font-size: 43px;
+
+    line-height: 1;
+}
+
+.letter-preview p {
+    margin-top: 12px;
+
+    color: #c74c70;
+
+    font-size: 13px;
+
+    font-weight: bold;
 }
 
 
-.letter h2 {
-    color: #e34d73;
+/* Повний текст поки ховаємо */
 
-    font-size: 20px;
-
-    margin-top: 5px;
+.letter-full {
+    display: none;
 }
 
 
-.letter p {
-    color: #555;
+/* =====================
+   OPEN
+===================== */
 
-    font-size: 14px;
-
-    line-height: 1.5;
-}
-
-
-.big-heart {
-    font-size: 35px;
-
-    margin-top: 10px;
-
-    animation: heartbeat 1s infinite;
-}
-
-
-/* ===== КОЛИ КОНВЕРТ ВІДКРИВАЄТЬСЯ ===== */
-
-.envelope-container.open .flap {
+.scene.open .flap {
     transform: rotateX(180deg);
 
     z-index: 1;
 }
 
-
-/* Лист виїжджає вгору */
-
-.envelope-container.open .letter {
-    transform: translateY(-170px);
-
-    height: 280px;
-
-    z-index: 5;
+.scene.open .seal {
+    opacity: 0;
 }
 
 
-/* ===== СЕРДЕЧКА ===== */
+/* лист виїжджає */
+
+.scene.open .letter {
+    transform: translateY(-115px);
+
+    z-index: 3;
+}
+
+
+/* =====================
+   СЕРДЕЧКА
+===================== */
 
 .hearts {
     position: absolute;
 
+    left: 0;
+    bottom: 150px;
+
     width: 100%;
 
-    left: 0;
-    bottom: 120px;
-
-    z-index: 6;
-
     pointer-events: none;
-}
 
+    z-index: 10;
+}
 
 .hearts span {
     position: absolute;
 
-    font-size: 30px;
+    color: #d60025;
+
+    font-size: 35px;
 
     opacity: 0;
 }
 
 
-/* Запускаємо сердечка після OPEN */
-
-.envelope-container.open .hearts span {
-    animation: flyHeart 2.5s ease forwards;
+.scene.open .hearts span {
+    animation:
+        heartFly
+        2.2s
+        ease-out
+        forwards;
 }
 
 
 .hearts span:nth-child(1) {
-    left: 50px;
+    left: 60px;
+
     animation-delay: 0.2s !important;
 }
 
-
 .hearts span:nth-child(2) {
-    left: 100px;
-    animation-delay: 0.5s !important;
+    left: 105px;
+
+    animation-delay: 0.4s !important;
 }
 
-
 .hearts span:nth-child(3) {
-    left: 150px;
+    left: 140px;
+
+    font-size: 45px;
+
+    animation-delay: 0.6s !important;
+}
+
+.hearts span:nth-child(4) {
+    left: 185px;
+
     animation-delay: 0.8s !important;
 }
 
+.hearts span:nth-child(5) {
+    left: 220px;
 
-.hearts span:nth-child(4) {
-    left: 200px;
     animation-delay: 1s !important;
 }
 
 
-.hearts span:nth-child(5) {
-    left: 250px;
-    animation-delay: 1.2s !important;
-}
-
-
-/* ===== ЗБІЛЬШЕНИЙ ЛИСТ ===== */
-
-.letter.expanded {
-    position: fixed;
-
-    width: min(90vw, 500px);
-    height: min(75vh, 600px);
-
-    left: 50%;
-    top: 50%;
-    bottom: auto;
-
-    transform: translate(-50%, -50%) !important;
-
-    z-index: 100;
-
-    padding: 15px;
-
-    overflow-y: auto;
-
-    box-shadow: 0 15px 60px rgba(0, 0, 0, 0.30);
-
-    transition: all 0.7s ease;
-}
-
-
-/* Затемнення фону */
-
-body.letter-open::after {
-    content: "";
-
-    position: fixed;
-
-    inset: 0;
-
-    background: rgba(0, 0, 0, 0.35);
-
-    z-index: 50;
-}
-
-
-body.letter-open .letter {
-    z-index: 100;
-}
-
-
-/* ===== КНОПКИ ===== */
-
-.buttons {
-    margin-top: 40px;
-}
-
-
-button {
-    width: 110px;
-
-    padding: 12px;
-
-    margin: 5px;
-
-    border: 2px solid #e47b98;
-
-    background: transparent;
-
-    color: #d94b70;
-
-    font-weight: bold;
-
-    cursor: pointer;
-
-    border-radius: 5px;
-
-    transition: 0.3s;
-}
-
-
-button:hover {
-    background: #e47b98;
-
-    color: white;
-
-    transform: scale(1.05);
-}
-
-
-/* ===== АНІМАЦІЯ СЕРДЕЧОК ===== */
-
-@keyframes flyHeart {
+@keyframes heartFly {
 
     0% {
-        transform: translateY(0) scale(0.5);
         opacity: 0;
+
+        transform:
+            translateY(20px)
+            scale(0.4);
     }
 
     20% {
@@ -353,43 +355,199 @@ button:hover {
     }
 
     100% {
-        transform:
-            translateY(-250px)
-            scale(1.4)
-            rotate(20deg);
-
         opacity: 0;
+
+        transform:
+            translateY(-180px)
+            scale(1.25);
     }
 }
 
 
-/* ===== АНІМАЦІЯ ВЕЛИКОГО СЕРЦЯ ===== */
+/* =====================
+   ВЕЛИКИЙ ЛИСТ
+===================== */
+
+.letter.expanded {
+    position: fixed;
+
+    width: min(90vw, 520px);
+    height: min(75vh, 620px);
+
+    left: 50%;
+    top: 50%;
+    bottom: auto;
+
+    transform:
+        translate(-50%, -50%)
+        scale(1) !important;
+
+    background: #fff8fa;
+
+    border-radius: 14px;
+
+    overflow-y: auto;
+
+    z-index: 100;
+
+    cursor: default;
+
+    box-shadow:
+        0 20px 70px
+        rgba(70, 20, 35, 0.30);
+}
+
+
+.letter.expanded .letter-preview {
+    display: none;
+}
+
+
+.letter.expanded .letter-full {
+    display: block;
+
+    padding: 30px;
+}
+
+
+.letter-full h2 {
+    margin-top: 0;
+
+    color: #d34268;
+
+    font-size: 26px;
+}
+
+
+.letter-full p {
+    color: #444;
+
+    font-size: 17px;
+
+    line-height: 1.65;
+}
+
+
+.final-heart {
+    color: #d60025;
+
+    font-size: 45px;
+
+    margin: 20px;
+
+    animation: heartbeat 1s infinite;
+}
+
 
 @keyframes heartbeat {
-
-    0% {
-        transform: scale(1);
-    }
 
     50% {
         transform: scale(1.2);
     }
-
-    100% {
-        transform: scale(1);
-    }
 }
 
 
-/* ===== ВЕРСІЯ ДЛЯ ТЕЛЕФОНУ ===== */
+/* =====================
+   ЗАТЕМНЕННЯ
+===================== */
+
+.overlay {
+    position: fixed;
+
+    inset: 0;
+
+    background:
+        rgba(70, 25, 40, 0.35);
+
+    opacity: 0;
+
+    visibility: hidden;
+
+    transition: 0.4s;
+
+    z-index: 50;
+}
+
+
+.overlay.active {
+    opacity: 1;
+
+    visibility: visible;
+}
+
+
+/* =====================
+   КНОПКИ
+===================== */
+
+.buttons {
+    margin-top: 35px;
+}
+
+
+button {
+    width: 105px;
+
+    margin: 0 6px;
+
+    padding: 10px;
+
+    background: transparent;
+
+    border:
+        2px solid
+        #df7895;
+
+    color: #c94e70;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+    transition: 0.25s;
+}
+
+
+button:hover {
+    background: #df7895;
+
+    color: white;
+}
+
+
+/* =====================
+   ТЕЛЕФОН
+===================== */
 
 @media (max-width: 500px) {
 
-    .envelope-container {
-        transform: scale(0.85);
+    .scene {
+        transform: scale(0.9);
     }
 
-    h1 {
-        font-size: 25px;
+    .buttons {
+        margin-top: 20px;
+    }
+
+    .letter.expanded {
+        width: 90vw;
+
+        height: 72vh;
+
+        transform:
+            translate(-50%, -50%)
+            scale(1.1) !important;
+    }
+
+    .letter.expanded .letter-full {
+        padding: 22px;
+    }
+
+    .letter-full h2 {
+        font-size: 22px;
+    }
+
+    .letter-full p {
+        font-size: 16px;
     }
 }
