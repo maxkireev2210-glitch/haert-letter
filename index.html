@@ -5,114 +5,56 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Heart Letter ❤️</title>
+    <title>Для Ірусі ❤️</title>
 
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-    <main class="page">
-
-        <div class="scene" id="scene">
-
-            <!-- Сердечка -->
-            <div class="hearts">
-                <span>♥</span>
-                <span>♥</span>
-                <span>♥</span>
-                <span>♥</span>
-                <span>♥</span>
-            </div>
+    <!-- ДЕКОРАТИВНІ СЕРДЕЧКА НА ФОНІ -->
+    <div class="background-hearts">
+        <span>♥</span>
+        <span>♥</span>
+        <span>♥</span>
+        <span>♥</span>
+        <span>♥</span>
+        <span>♥</span>
+    </div>
 
 
-            <!-- ЛИСТ -->
-            <div class="letter" id="letter">
+    <!-- =====================================
+         1. ГОЛОВНИЙ ЕКРАН
+    ====================================== -->
 
-                <!-- Маленький лист у конверті -->
-                <div class="letter-preview">
+    <section class="screen active" id="homeScreen">
 
-                    <div class="preview-heart">
-                        ♥
-                    </div>
+        <div class="home-content">
 
-                    <p>Натисни на мене ❤️</p>
+            <p class="small-text">
+               ЛИШЕ ДЛЯ ТЕБЕ 
+            </p>
 
-                </div>
+            <h1 class="main-title">
+                Для тебе ❤️
+            </h1>
 
-
-                <!-- Повний текст листа -->
-                <div class="letter-full">
-
-                    <h2>❤️ Для тебе ❤️</h2>
-
-                    <p>
-                        Тому замість звичайного повідомлення
-                        зробив цей маленький сайт :)
-                    </p>
-
-                    <p>
-                        Іруська сонечко моє
-                    </p>
-
-                    <p>
-                        дякую тобі за те, що ти є в моєму житті ❤️
-                    </p>
-
-                    <p>
-                        дякую тобі за твою любов, підтримку та турботу ❤️
-                    </p>
-
-                    <p>
-                        да можливо я не завжди це показую,
-                        але я дуже ціную тебе ❤️
-                    </p>
-
-                    <p>
-                        можливо я не найкращий хлопець
-                        який завжди може зробити тобі подарунок
-                    </p>
-
-                    <p>
-                        але я обіцяю, що завжди буду поруч ❤️
-                    </p>
-
-                    <p>
-                        обіцяю старатись для того
-                        аби це стало реальністю
-                    </p>
-
-                    <p>
-                        обіцяю завжди бути чесним з тобою ❤️
-                    </p>
-
-                    <p>
-                        і завжди кохати тебе ❤️❤️❤️
-                    </p>
-
-                    <p>
-                        тому що ти моє маленьке сонечко ❤️
-                    </p>
-
-                    <p>
-                        ти моє золотце ❤️
-                    </p>
-
-                    <div class="final-heart">
-                        ♥
-                    </div>
-
-                </div>
-
-            </div>
+            <p class="subtitle">
+                Я зробив для тебе маленький сюрприз
+            </p>
 
 
             <!-- КОНВЕРТ -->
-            <div class="envelope">
+
+            <div class="start-envelope" id="startEnvelope">
 
                 <div class="envelope-back"></div>
 
-                <div class="flap"></div>
+                <div class="envelope-letter">
+                    <span>♥</span>
+                </div>
+
+                <div class="envelope-flap"></div>
 
                 <div class="envelope-left"></div>
 
@@ -120,33 +62,721 @@
 
                 <div class="envelope-bottom"></div>
 
-                <div class="seal">♥</div>
+                <div class="envelope-seal">
+                    ♥
+                </div>
+
+            </div>
+
+
+            <p class="tap-text">
+                Натисни на конверт 💌
+            </p>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =====================================
+         2. ВИБІР СЮРПРИЗУ
+    ====================================== -->
+
+    <section class="screen" id="menuScreen">
+
+        <button class="home-button">
+            ♡
+        </button>
+
+
+        <div class="menu-content">
+
+            <p class="small-text">
+               ЗРОБЛЕНО З КОХАННЯМ
+            </p>
+
+            <h1 class="menu-title">
+                Обери сюрприз 
+            </h1>
+
+            <p class="menu-subtitle">
+                Обери, що хочеш відкрити ❤️
+            </p>
+
+
+            <div class="surprise-grid">
+
+
+                <!-- JOURNEY -->
+
+                <button
+                    class="surprise-card"
+                    data-target="journeyScreen"
+                >
+
+                    <div class="card-icon">
+                        📷
+                    </div>
+
+                    <h2>
+                        Наша історія 
+                    </h2>
+
+                    <p>
+                       Як усе починалось 
+                    </p>
+
+                </button>
+
+
+                <!-- MOMENTS -->
+
+                <button
+                    class="surprise-card"
+                    data-target="momentsScreen"
+                >
+
+                    <div class="card-icon">
+                        💕
+                    </div>
+
+                    <h2>
+                        Наші моменти 
+                    </h2>
+
+                    <p>
+                        наші спогади 
+                    </p>
+
+                </button>
+
+
+                <!-- PLAYLIST -->
+
+                <button
+                    class="surprise-card"
+                    data-target="playlistScreen"
+                >
+
+                    <div class="card-icon">
+                        💿
+                    </div>
+
+                    <h2>
+                        Наша пісня
+                    </h2>
+
+                    <p>
+                       Послухай 
+                    </p>
+
+                </button>
+
+
+                <!-- GIFT -->
+
+                <button
+                    class="surprise-card"
+                    data-target="giftScreen"
+                >
+
+                    <div class="card-icon">
+                        🎁
+                    </div>
+
+                    <h2>
+                        Для тебе 
+                    </h2>
+
+                    <p>
+                        Відкрий мене 
+                    </p>
+
+                </button>
 
             </div>
 
         </div>
 
+    </section>
 
-        <!-- КНОПКИ -->
-        <div class="buttons">
 
-            <button id="openBtn">
-                OPEN
-            </button>
 
-            <button id="resetBtn">
-                RESET
-            </button>
+    <!-- =====================================
+         3. JOURNEY
+    ====================================== -->
+
+    <!-- =====================================
+     НАША ІСТОРІЯ
+====================================== -->
+
+<section class="screen" id="journeyScreen">
+
+    <button class="back-button">
+        ← НАЗАД
+    </button>
+
+    <div class="section-content story-section">
+
+        <p class="small-text">
+            НАША ІСТОРІЯ
+        </p>
+
+        <h1>
+            Наша історія ❤️
+        </h1>
+
+        <p class="section-description">
+            Від самого початку і до сьогодні
+        </p>
+
+
+        <div class="timeline">
+
+
+            <!-- 1 -->
+
+            <div class="timeline-item">
+
+                <div class="timeline-dot">
+                    ♥
+                </div>
+
+                <div class="story-card">
+
+                    <div class="story-date">
+                        03.05.2026
+                    </div>
+
+                    <img
+                        src="images/story1.jpeg"
+                        alt="Наша перша прогулянка"
+                    >
+
+                    <div class="story-text">
+
+                        <h2>
+                            Наша перша прогулянка ❤️
+                        </h2>
+
+                        <p>
+                            Саме тут почалася наша історія.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- 2 -->
+
+            <div class="timeline-item">
+
+                <div class="timeline-dot">
+                    ♥
+                </div>
+
+                <div class="story-card">
+
+                    <div class="story-date">
+                        23.05.2026
+                    </div>
+
+                    <img
+                        src="images/story 2.jpeg"
+                        alt="Перші труднощі"
+                    >
+
+                    <div class="story-text">
+
+                        <h2>
+                            Перші труднощі ❤️‍🩹
+                        </h2>
+
+                        <p>
+                            Саме тут у нас виникли перші труднощі,
+                            але наша історія продовжилась.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- 3 -->
+
+            <div class="timeline-item">
+
+                <div class="timeline-dot">
+                    ♥
+                </div>
+
+                <div class="story-card">
+
+                    <div class="story-date">
+                        26.05.2026
+                    </div>
+
+                    <img
+                        src="images/story 3.jpeg"
+                        alt="Наше майбутнє"
+                    >
+
+                    <div class="story-text">
+
+                        <h2>
+                            Наше майбутнє 💭❤️
+                        </h2>
+
+                        <p>
+                            А ось тут ми уявляли себе
+                            в майбутньому — разом.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- 4 -->
+
+            <div class="timeline-item">
+
+                <div class="timeline-dot">
+                    ♥
+                </div>
+
+                <div class="story-card">
+
+                    <div class="story-date">
+                        25.06.2026
+                    </div>
+
+                  <img
+                        src="images/story4.jpeg"
+                        alt="Важливий момент"
+                  >
+
+                    <div class="story-text">
+
+                        <h2>
+                            Важливий момент 🎓❤️
+                        </h2>
+
+                        <p>
+                            Закінчення того етапу, де все почалося.
+                            Одна частина нашої історії завершилась,
+                            але наша історія продовжилась.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- 5 -->
+
+            <div class="timeline-item">
+
+                <div class="timeline-dot">
+                    ♥
+                </div>
+
+                <div class="story-card">
+
+                    <div class="story-date">
+                        15.07.2026
+                    </div>
+
+                    <img
+                        src="images/story 5.jpeg"
+                        alt="Відносини на відстані"
+                    >
+
+                    <div class="story-text">
+
+                        <h2>
+                            Найважчий етап 🫂❤️
+                        </h2>
+
+                        <p>
+                            Відносини на відстані.
+                            Один із найважчих періодів для нас,
+                            який змусив ще більше цінувати моменти,
+                            коли ми поруч.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- 6 -->
+
+            <div class="timeline-item">
+
+                <div class="timeline-dot">
+                    ♥
+                </div>
+
+                <div class="story-card">
+
+                    <div class="story-date">
+                        26.07.2026
+                    </div>
+
+                   <img
+                       src="images/story6.jpeg"
+                       alt="Наші відносини"
+                    >
+
+                    <div class="story-text">
+
+                        <h2>
+                            Наші відносини ❤️
+                        </h2>
+
+                        <p>
+                            Ще один важливий момент нашої історії.
+                            Попри все, що було, ми продовжуємо
+                            йти далі разом.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- 7 -->
+
+            <div class="timeline-item">
+
+                <div class="timeline-dot">
+                    ♥
+                </div>
+
+                <div class="story-card">
+
+                    <div class="story-date">
+                        13.09.2026
+                    </div>
+
+                    <img
+                        src="images/story 7.jpeg"
+                        alt="Ми сьогодні"
+                    >
+
+                    <div class="story-text">
+
+                        <h2>
+                            А це ми сьогодні ❤️
+                        </h2>
+
+                        <p>
+                            Після всього, через що ми пройшли,
+                            ми тут. Наша історія ще не закінчена,
+                            і я дуже хочу, щоб попереду в нас
+                            було ще багато спільних моментів ❤️
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
 
         </div>
 
-    </main>
+    </div>
+
+</section>
 
 
-    <!-- Затемнення при відкритті листа -->
-    <div class="overlay" id="overlay"></div>
+
+    <!-- =====================================
+         4. MOMENTS
+    ====================================== -->
+
+    <section class="screen" id="momentsScreen">
+
+        <button class="back-button">
+            ← Назад
+        </button>
 
 
+        <div class="section-content">
+
+            <p class="small-text">
+                НАШІ МОМЕНТИ
+            </p>
+
+            <h1>
+                Наші моменти ❤️
+            </h1>
+
+            <p class="section-description">
+                Маленькі моменти, які для мене багато значать
+            </p>
+
+
+            <!--
+                СЮДИ ПІЗНІШЕ ДОДАМО
+                ТВОЇ 6 ФОТОГРАФІЙ
+            -->
+
+            <div class="photo-grid" id="photoGrid">
+
+    <div class="polaroid">
+        <img src="images/photo1.jpeg" alt="Наше фото">
+        <p>Наш момент ❤️</p>
+    </div>
+
+    <div class="polaroid">
+        <img src="images/photo2.jpeg" alt="Наше фото">
+        <p>Разом ❤️</p>
+    </div>
+
+    <div class="polaroid">
+        <img src="images/photo3.jpeg" alt="Наше фото">
+        <p>Ти моє сонечко ☀️</p>
+    </div>
+
+    <div class="polaroid">
+        <img src="images/photo4.jpeg" alt="Наше фото">
+        <p>Ми ❤️</p>
+    </div>
+
+    <div class="polaroid">
+        <img src="images/photo5.jpeg" alt="Наше фото">
+        <p>Наш спогад 💕</p>
+    </div>
+
+    <div class="polaroid">
+        <img src="images/photo6.jpeg" alt="Наше фото">
+        <p>І це тільки початок ❤️</p>
+    </div>
+
+</div>
+
+    </section>
+
+
+
+    <!-- =====================================
+         5. PLAYLIST
+    ====================================== -->
+
+    <section class="screen" id="playlistScreen">
+
+        <button class="back-button">
+            ← Назад
+        </button>
+
+
+        <div class="section-content">
+
+            <p class="small-text">
+                НАША ПІСНЯ 
+            </p>
+
+            <h1>
+                Наша пісня ❤️
+            </h1>
+
+
+            <div class="music-card">
+
+
+                <!-- ПЛАТІВКА -->
+
+                <div class="vinyl" id="vinyl">
+
+                    <div class="vinyl-lines">
+
+                        <div class="vinyl-center">
+                            ❤️
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <h2 class="song-title">
+                   Наша пісня 
+                </h2>
+
+                <p class="song-subtitle">
+                    Для нас двох ❤️
+                </p>
+
+
+                <!-- PLAY -->
+
+                <button
+                    class="music-button"
+                    id="musicBtn"
+                >
+                    ▶ УВІМКНУТИ ПІСНЮ
+                </button>
+
+
+                <!-- MP3 -->
+
+                <audio id="ourSong">
+
+                    <source
+                        src="images/music/our song.mp3"
+                        type="audio/mpeg"
+                    >
+
+                </audio>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =====================================
+         6. GIFT — ТВОЄ ПОВІДОМЛЕННЯ
+    ====================================== -->
+
+    <section class="screen" id="giftScreen">
+
+        <button class="back-button">
+            ← Назад
+        </button>
+
+
+        <div class="gift-wrapper">
+
+            <p class="small-text">
+                Для тебе❤️
+            </p>
+
+
+            <div class="gift-letter">
+
+                <h1>
+                    ❤️ Сонечко, Ірусь ❤️
+                </h1>
+
+
+                <p>
+                    Так, я знаю, що наробив багато хуйні.
+                    Так, я зробив це не спеціально, але так вийшло.
+                    Мені дуже стидно перед тобою за цей свій поступок,
+                    так само як і стидно за те, що я вчора зірвався на тебе.
+                </p>
+
+
+                <p>
+                    Я не знаю, що зі мною тоді сталося,
+                    що в мені так переклинило і чому я так повівся.
+                    Мені справді дуже прикро за свій вчинок.
+                </p>
+
+
+                <p>
+                    Я розумію, що словами цього вже не змінити,
+                    але хочу, щоб ти знала: я усвідомлюю,
+                    що зробив неправильно.
+                    Мені важливо не просто попросити в тебе вибачення,
+                    а показати своїми вчинками, що я зробив висновки.
+                </p>
+
+
+                <p>
+                    Я готовий змінитись,
+                    готовий стати кращою версією себе,
+                    але при цьому залишатись собою —
+                    тим самим Максімом, якого ти знаєш. ❤️
+                </p>
+
+
+                <p>
+                    Я не хочу просто говорити, що змінюсь.
+                    Я хочу показати тобі це своїми вчинками.
+                    Хочу навчитись краще контролювати свої емоції,
+                    більше думати про те, як мої слова та дії
+                    можуть вплинути на тебе,
+                    і не повторювати тих помилок,
+                    через які тобі було боляче.
+                </p>
+
+
+                <p>
+                    Я знаю, що зміни не відбуваються за один день,
+                    але я готовий працювати над собою.
+                    Не хочу втрачати те, що між нами є,
+                    і хочу ставати кращим поруч із тобою. ❤️
+                </p>
+
+
+                <p>
+                    Я готовий витримати будь-який холод у свою сторону,
+                    будь-які труднощі й дати тобі стільки часу та простору,
+                    скільки буде потрібно.
+                    Я розумію, що після всього не можу вимагати,
+                    щоб усе одразу стало як раніше.
+                </p>
+
+
+                <p>
+                    Мені важливо бути поруч із тобою
+                    і разом із тобою підніматись на ноги,
+                    підтримувати одне одного,
+                    проходити через складні моменти
+                    й ставати сильнішими.
+                    Я готовий старатись заради нас
+                    і доводити це не словами,
+                    а своїми вчинками. ❤️
+                </p>
+
+
+                <p class="love-final">
+                    Тому що, Ірусь,
+                    я тебе кохаю ❤️❤️❤️❤️❤️❤️
+                </p>
+
+
+                <div class="gift-heart">
+                    ♥
+                </div>
+
+
+                <p class="ps-text">
+                    <strong>
+                        P.S. А тепер вийди,
+                        будь ласка, на вулицю ❤️
+                    </strong>
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- JS -->
     <script src="script.js"></script>
 
 </body>
